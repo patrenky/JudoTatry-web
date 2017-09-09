@@ -1,5 +1,7 @@
 import React from "react";
 
+import { openLink } from "../utils";
+
 const InfoBar = () => (
   <div className="infobar">
     <div className="infobar-content">
@@ -11,7 +13,7 @@ const InfoBar = () => (
         <i className="fa fa-envelope-o" />
         ssedlackova.silvia@gmail.com
       </p>
-      <p>
+      <p onClick={() => openLink("www.facebook.com/judotatry")}>
         <i className="fa fa-facebook" />
         Facebook
       </p>

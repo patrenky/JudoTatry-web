@@ -39,6 +39,18 @@ h2 {
   color: $c-blue-dark;
 }
 
+.reg-link {
+  font-size: 1.2em;
+  color: $c-blue-dark;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  i {
+    margin-right: 0.5em;
+  }
+}
+
 /* FLEX */
 
 .flex-row {
@@ -66,6 +78,7 @@ h2 {
   height: 3em;
   width: 100%;
   transition: background-color 0.2s;
+  z-index: 99;
   &-content {
     max-width: 1300px;
     margin: 0 auto;
@@ -116,7 +129,6 @@ h2 {
         text-align: center;
         background-color: $c-blue-dark;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: display 2s; // ?
         &.collapsed {
           display: flex;
           flex-direction: column;
@@ -184,6 +196,19 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   color: $c-blue-dark;
+  &-mini {
+    height: 30vh;
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+  }
+  .image {
+    height: 50vh;
+  }
   .text {
     font-size: 2em;
     line-height: 0;
@@ -311,7 +336,7 @@ h2 {
       display: none;
     }
     &-row {
-      flex-direction: column;
+      flex-wrap: wrap;
     }
     &-day {
       font-weight: bold;
@@ -364,12 +389,16 @@ h2 {
 
 @media (max-width: $breakpoint-tablet + 100px) {
   .contact {
-    flex-direction: column;
+    flex-wrap: wrap;
     & > * {
       width: 100%;
     }
     &-map {
       height: 400px;
+      flex-basis: 100%;
+    }
+    &-info {
+      flex-basis: 100%;
     }
     &-row {
       padding-left: 2em;
@@ -393,16 +422,16 @@ h2 {
     margin-bottom: 0 !important;
   }
   &-copyright {
-    flex-basis: 40%;
+    flex-basis: 30%;
     padding: 0.5em;
     text-align: center;
     .logo {
       cursor: pointer;
-      height: 4em;
+      height: 5em;
     }
   }
   &-sitemap {
-    flex-basis: 55%;
+    flex-basis: 65%;
     padding: 0.5em;
     display: flex;
     flex-direction: row;

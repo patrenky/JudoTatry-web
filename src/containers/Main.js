@@ -3,22 +3,23 @@ import Waypoint from "react-waypoint";
 import { Element } from "react-scroll";
 import { compose, withState } from "recompose";
 
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import Menu from "../components/Menu";
+import MainBanner from "../components/MainBanner";
 import InfoBar from "../components/InfoBar";
 import Table from "../components/Table";
+import RegDoc from "../components/RegDoc";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const Main = ({ pinnedHeader, pinHeader }) => (
   <div>
-    <Header pinned={pinnedHeader} />
+    <Menu pinned={pinnedHeader} />
     <Waypoint
       scrollableAncestor={window}
       onPositionChange={e => pinHeader(e.currentPosition === "above")}
       topOffset={-100}
     />
-    <Banner />
+    <MainBanner />
     <Element name="content" />
     <InfoBar />
     <Element name="trainings" />
@@ -26,6 +27,7 @@ const Main = ({ pinnedHeader, pinHeader }) => (
       <h2>Tréningy</h2>
       <Table />
     </div>
+    <RegDoc />
     {/* <div className="container">
       <h2>Aktuality</h2>
     </div> */}
