@@ -1,9 +1,6 @@
 import React from "react";
-import Waypoint from "react-waypoint";
 import { Element } from "react-scroll";
-import { compose, withState } from "recompose";
 
-import Menu from "../components/Menu";
 import MainBanner from "../components/MainBanner";
 import InfoBar from "../components/InfoBar";
 import Table from "../components/Table";
@@ -11,14 +8,8 @@ import RegDoc from "../components/RegDoc";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-const Main = ({ pinnedHeader, pinHeader }) => (
+const Main = () => (
   <div>
-    <Menu pinned={pinnedHeader} />
-    <Waypoint
-      scrollableAncestor={window}
-      onPositionChange={e => pinHeader(e.currentPosition === "above")}
-      topOffset={-100}
-    />
     <MainBanner />
     <Element name="content" />
     <InfoBar />
@@ -40,4 +31,4 @@ const Main = ({ pinnedHeader, pinHeader }) => (
   </div>
 );
 
-export default compose(withState("pinnedHeader", "pinHeader", false))(Main);
+export default Main;

@@ -3,21 +3,15 @@ import Parser from 'html-react-parser';
 import { compose } from "recompose";
 import { map } from "lodash";
 
-import Menu from "../components/Menu";
+import Banner from "../components/Banner";
 import Editor from "../components/Editor";
 
 import { fakeNews } from "../enums/fakeData";
 
 const News = () => (
   <div style={{ height: "500vh" }}>
-    <Menu pinned={true} />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <Banner />
     <div className="container news">
-      <h2>Admin</h2>
       {map(fakeNews, (item, i) => (
         <div key={`${i}-${item.timeStamp}`}>
           <p>{item.title}</p>

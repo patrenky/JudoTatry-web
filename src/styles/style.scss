@@ -406,6 +406,98 @@ h2 {
   }
 }
 
+/* ABOUT */
+
+.about {
+  &-texts {
+    padding: 0 1em;
+    text-align: justify;
+    font-size: 0.9em;
+  }
+  &-tabs {
+    .tab {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: solid 1px $c-blue-dark;
+      margin-bottom: -1px;
+      &-title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0 1em;
+        background-color: $c-blue-primary;
+        color: $c-white;
+        cursor: pointer;
+        p {
+          flex-basis: 90%;
+        }
+        i {
+          flex-basis: 10%;
+          text-align: right;
+        }
+      }
+      &-text {
+        font-size: 0.9em;
+        padding: 0 1em;
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.2s;
+        &.active {
+          height: auto;
+        }
+      }
+    }
+  }
+  &-dictionary {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .dict {
+      &-row {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      &-col {
+        flex-basis: 50%;
+        margin-bottom: 1em;
+      }
+    }
+    b {
+      font-size: 0.9em;
+      margin: 0.5em 1em;
+    }
+    p {
+      font-size: 0.8em;
+      margin: 0.3em 1em;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet + 200px) {
+  .about-dictionary {
+    .dict-col {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile + 100px) {
+  .about-dictionary {
+    .dict {
+      &-row {
+        flex-basis: 100%;
+      }
+      &-col {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
 /* FOOTER */
 
 .footer {

@@ -13,7 +13,7 @@ const InfoBar = () => (
         <i className="fa fa-envelope-o" />
         ssedlackova.silvia@gmail.com
       </p>
-      <p onClick={() => openLink("www.facebook.com/judotatry")}>
+      <p onClick={() => openLink("http://www.facebook.com/judotatry/")}>
         <i className="fa fa-facebook" />
         Facebook
       </p>

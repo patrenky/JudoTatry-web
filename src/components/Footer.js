@@ -13,8 +13,8 @@ const Footer = ({ history }) => (
       <div className="footer-sitemap">
         <p onClick={() => history.push('/')}>Domov</p>
         <p onClick={() => history.push('/aktuality')}>Aktuality</p>
-        <p onClick={() => history.push('/')}>Judo</p>
-        <p onClick={() => history.push('/')}>Kontakt</p>
+        <p onClick={() => history.push('/judo')}>Judo</p>
+        <p onClick={() => history.push('/kontakt')}>Kontakt</p>
         <p onClick={() => history.push('/admin')}>Admin</p>
       </div>
     </div>
