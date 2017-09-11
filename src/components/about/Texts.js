@@ -28,7 +28,10 @@ const Texts = () => (
       metód takmer masové rozšírenie (6 miliónov registrovaných cvičencov) vo všetkých krajinách
       sveta.
     </p>
-    <p>Tomuto športu sa venuje dokonca aj ruský prezident V. V. Putin.</p>
+    <p>
+      <b>Judo je olympijským športom od roku 1964.</b> Tomuto športu sa venuje dokonca aj ruský
+      prezident V. V. Putin.
+    </p>
     <p>
       Judo je tvorené veľkým množstvom techník, ktoré sú rozdelené do skupín a podskupín.
       Najrozšírenejšou systematikou je rozdelenie podľa Kódókanu (najvyššia inštitúcia judo). Sú to

@@ -34,17 +34,15 @@ export const dictionary = [
       { jpn: "yoši", svk: "pokračujte (po znehybnení)" },
       { jpn: "ippon", svk: "hodnotenie za 10 bodov, automaticky víťazstvo a koniec zápasu" },
       { jpn: "wazaari", svk: "hodnotenie za 7 bodov" },
-      { jpn: "wazaari awasate ippon", svk: "druhé wazari znamená ippon" },
-      { jpn: "yuko", svk: "hodnotenie za 5 bodov" },
       {
         jpn: "hansoku-make",
         svk:
-          "10 trestných bodov (ippon pre súpera, automaticky prehra a koniec zápasu) - ak je udelené za hrubé nešportové správanie nasleduje diskvalifikácia z celého turnaja"
+          "automaticky prehra a koniec zápasu. Je udelené za hrubé nešportové správanie, alebo za opakované šido."
       },
       {
         jpn: "šido",
         svk:
-          "trestné hodnotenie: 1.šido - varovanie, 2.šido - yuko pre súpera, 3. šido - wazaari pre súpera, 4.šido - ippon pre súpera (hansoku-make)"
+          "trestné hodnotenie: 3 x šido = hansoku-make a koniec zápasu"
       }
     ]
   },

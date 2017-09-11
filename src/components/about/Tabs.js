@@ -22,6 +22,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
           náročnosť tohto športu, kvalitné tréningové podmienky a možnosť zúčastňovať sa domácich i
           zahraničných turnajov a sústredení.
         </p>
+        <p>Judo je šport vhodný tak pre chlapcov, ako aj pre dievčatá.</p>
       </div>
     </div>
 
@@ -80,10 +81,32 @@ const Tabs = ({ activeTab, setActiveTab }) => (
 
     <div className="tab">
       <div className="tab-title" onClick={() => setActiveTab(activeTab === 3 ? null : 3)}>
-        <p>Rodičia na tréningoch</p>
+        <p>Čo potrebuje vaše dieťa na tréning</p>
         {activeTab === 3 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
       <div className={classNames("tab-text", { active: activeTab === 3 })}>
+        <p>
+          Kým tréner, po konzultácii s rodičmi neodporučí kimono, dieťa nosí na prezlečenie tričko s
+          dlhými rukávmi (tenké, nie mikinu), tepláky, šlapky a pitie (čistá voda alebo nesladený
+          nápoj). Odporúčame staršie oblečenie, ktoré Vám nebude ľúto ak sa rozťahá a potrhá. Keď
+          bude dieťa trénovať v kimone, pod kimono tričko s krátkym rukávom, taktiež odporúčame
+          staršie. Dieťa nikdy nesmie cvičiť v oblečení, v ktorom prišiel na tréning, ani v
+          tréningovom oblečení nesmie odchádzať domov (hygiena, riziko prechladnutia). Dieťa cvičí
+          bosé. Akékoľvek šperky - retiazky, prstene, náušnice, sponky, čelenky, piercingy...sú na
+          tréningu zakázané (riziko úrazu seba a spolucvičiacich). V prípade, ak sú náušnice a
+          piercingy uzamknuté a teda je problematické ich pred tréningom odložiť, zalepte ich
+          dieťaťu leukaplastom. Dlhé vlásky musia byť stiahnuté gumičkou, najlepšie bavlnenou.
+        </p>
+        <p>Všetko pre bezpečnosť vašich detí!</p>
+      </div>
+    </div>
+
+    <div className="tab">
+      <div className="tab-title" onClick={() => setActiveTab(activeTab === 4 ? null : 4)}>
+        <p>Rodičia na tréningoch</p>
+        {activeTab === 4 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
+      </div>
+      <div className={classNames("tab-text", { active: activeTab === 4 })}>
         <p>
           Rodičia a diváci môžu sledovať priebeh tréningov vo vyhradenom priestore telocvične a len
           so súhlasom trénera. Ak tréner uzná, že prítomnosť rodičov je pre bezproblémový priebeh
@@ -101,11 +124,11 @@ const Tabs = ({ activeTab, setActiveTab }) => (
     </div>
 
     <div className="tab">
-      <div className="tab-title" onClick={() => setActiveTab(activeTab === 4 ? null : 4)}>
+      <div className="tab-title" onClick={() => setActiveTab(activeTab === 5 ? null : 5)}>
         <p>Čo potrebuje vaše dieťa na súťaž</p>
-        {activeTab === 4 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
+        {activeTab === 5 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 4 })}>
+      <div className={classNames("tab-text", { active: activeTab === 5 })}>
         <ol>
           <li>
             Preukaz SZJ (uschovaný u trénera), kartu poistenca, občiansky preukaz – pri ceste do
@@ -140,11 +163,11 @@ const Tabs = ({ activeTab, setActiveTab }) => (
     </div>
 
     <div className="tab">
-      <div className="tab-title" onClick={() => setActiveTab(activeTab === 5 ? null : 5)}>
+      <div className="tab-title" onClick={() => setActiveTab(activeTab === 6 ? null : 6)}>
         <p>Rodičia na súťažiach</p>
-        {activeTab === 5 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
+        {activeTab === 6 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 5 })}>
+      <div className={classNames("tab-text", { active: activeTab === 6 })}>
         <p>
           Neodporúča sa účasť rodičov ani na súťažiach, či pretekoch. Ak sa však na účasti dohodnete
           s trénerom, dbajte na dodržiavanie týchto odporúčaní:
