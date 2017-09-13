@@ -51,6 +51,14 @@ h2 {
   }
 }
 
+.opening-text {
+  text-align: center;
+  color: $c-blue-dark;
+  i {
+    margin-right: 0.5em;
+  }
+}
+
 /* FLEX */
 
 .flex-row {
