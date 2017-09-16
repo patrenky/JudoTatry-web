@@ -4,21 +4,24 @@ import { compose } from "recompose";
 import { map } from "lodash";
 
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
-import { fakeNews } from "../enums/fakeData";
+import { data } from "../enums/news";
+import { formatDate } from '../utils';
 
 const News = () => (
-  <div style={{ height: "500vh" }}>
+  <div>
     <Banner />
     <div className="container news">
-      {map(fakeNews, (item, i) => (
-        <div key={`${i}-${item.timeStamp}`}>
-          <p>{item.title}</p>
-          <p>{item.timeStamp}</p>
-          <div>{Parser(item.text)}</div>
+      {map(data, (item, i) => (
+        <div className="news-row" key={`${i}-${item.timeStamp}`}>
+          <p className="news-title">{item.title}</p>
+          <p className="news-time">{formatDate(item.time)}</p>
+          <div className="news-text">{Parser(item.text)}</div>
         </div>
       ))}
     </div>
+    <Footer />
   </div>
 );
 

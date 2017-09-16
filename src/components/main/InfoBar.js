@@ -1,6 +1,6 @@
 import React from "react";
 
-import { openLink } from "../utils";
+import { openLink } from "../../utils";
 
 const InfoBar = () => (
   <div className="infobar">

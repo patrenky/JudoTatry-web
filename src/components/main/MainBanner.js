@@ -2,7 +2,7 @@ import React from "react";
 import { scroller } from "react-scroll";
 import { compose, withState, lifecycle, withHandlers } from "recompose";
 
-import LogoImage from "../assets/img/banner-img.png";
+import LogoImage from "../../assets/img/banner-img.png";
 
 const Banner = ({ countdownTime, scrollTo }) => (
   <div className="banner">

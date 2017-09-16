@@ -1,6 +1,9 @@
 import React from "react";
-import classNames from "classnames";
+import { Collapse } from "react-collapse";
 import { withState } from "recompose";
+
+// TODO scroll active tab
+// TODO data into json
 
 const Tabs = ({ activeTab, setActiveTab }) => (
   <div className="about-tabs">
@@ -9,7 +12,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Prečo je judo vhodné pre vaše deti</p>
         {activeTab === 1 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 1 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 1}>
         <p>
           Judo kladne vplýva na charakter a harmonický rozvoj osobnosti. Všestranne rozvíja všetky
           telesné partie a napomáha zdravému telesnému a duševnému vývoju celého organizmu. Judo učí
@@ -23,7 +26,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
           zahraničných turnajov a sústredení.
         </p>
         <p>Judo je šport vhodný tak pre chlapcov, ako aj pre dievčatá.</p>
-      </div>
+      </Collapse>
     </div>
 
     <div className="tab">
@@ -31,7 +34,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Správane sa na tréningu</p>
         {activeTab === 2 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 2 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 2}>
         <ul>
           <li>
             Judista sa pred vstupom do dojo (telocvičňa) a na tatami (žinenka) vždy ukloní. Taktiež
@@ -76,7 +79,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
             tichý režim.
           </li>
         </ul>
-      </div>
+      </Collapse>
     </div>
 
     <div className="tab">
@@ -84,7 +87,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Čo potrebuje vaše dieťa na tréning</p>
         {activeTab === 3 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 3 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 3}>
         <p>
           Kým tréner, po konzultácii s rodičmi neodporučí kimono, dieťa nosí na prezlečenie tričko s
           dlhými rukávmi (tenké, nie mikinu), tepláky, šlapky a pitie (čistá voda alebo nesladený
@@ -98,7 +101,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
           dieťaťu leukaplastom. Dlhé vlásky musia byť stiahnuté gumičkou, najlepšie bavlnenou.
         </p>
         <p>Všetko pre bezpečnosť vašich detí!</p>
-      </div>
+      </Collapse>
     </div>
 
     <div className="tab">
@@ -106,7 +109,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Rodičia na tréningoch</p>
         {activeTab === 4 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 4 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 4}>
         <p>
           Rodičia a diváci môžu sledovať priebeh tréningov vo vyhradenom priestore telocvične a len
           so súhlasom trénera. Ak tréner uzná, že prítomnosť rodičov je pre bezproblémový priebeh
@@ -120,7 +123,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
           Vaše dieťa bude disciplinované a bude rešpektovať pokyny trénera, či určeného
           skúsenejšieho judistu, nemalo by dôjsť k vážnemu zraneniu.
         </p>
-      </div>
+      </Collapse>
     </div>
 
     <div className="tab">
@@ -128,7 +131,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Čo potrebuje vaše dieťa na súťaž</p>
         {activeTab === 5 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 5 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 5}>
         <ol>
           <li>
             Preukaz SZJ (uschovaný u trénera), kartu poistenca, občiansky preukaz – pri ceste do
@@ -159,7 +162,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
           </li>
         </ol>
         <p>Ďalšie informácie poskytuje tréner vždy na tréningoch, pred odchodom na súťaž.</p>
-      </div>
+      </Collapse>
     </div>
 
     <div className="tab">
@@ -167,7 +170,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
         <p>Rodičia na súťažiach</p>
         {activeTab === 6 ? <i className="fa fa-caret-up" /> : <i className="fa fa-caret-down" />}
       </div>
-      <div className={classNames("tab-text", { active: activeTab === 6 })}>
+      <Collapse className="tab-text" isOpened={activeTab === 6}>
         <p>
           Neodporúča sa účasť rodičov ani na súťažiach, či pretekoch. Ak sa však na účasti dohodnete
           s trénerom, dbajte na dodržiavanie týchto odporúčaní:
@@ -196,7 +199,7 @@ const Tabs = ({ activeTab, setActiveTab }) => (
             ošetrí.
           </li>
         </ol>
-      </div>
+      </Collapse>
     </div>
   </div>
 );

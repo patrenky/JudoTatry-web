@@ -21,5 +21,4 @@ yarn-error.log*
 src/styles/*.css
 .vscode
 
-src/enums/logs.js
 src/enums/news.js

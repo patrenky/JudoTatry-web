@@ -1,7 +1,7 @@
 import React from "react";
 
-import { openLink } from "../utils";
-import RegDocument from "../assets/doc/regDoc.pdf";
+import { openLink } from "../../utils";
+import RegDocument from "../../assets/doc/regDoc.pdf";
 
 const RegDoc = () => (
   <div className="container">

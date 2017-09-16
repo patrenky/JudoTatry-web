@@ -47,7 +47,7 @@ const Table = () => (
       </div>
     </div>
     <p className="opening-text">
-      <i className="fa fa-info-circle" />Začíname 2.októbra v malej teocvični ZŠ KOmenského Svit
+      <i className="fa fa-info-circle" />Začíname 2.októbra v malej telocvični ZŠ Komenského Svit
     </p>
   </div>
 );

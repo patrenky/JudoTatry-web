@@ -1,11 +1,12 @@
 import React from "react";
 import { Element } from "react-scroll";
 
-import MainBanner from "../components/MainBanner";
-import InfoBar from "../components/InfoBar";
-import Table from "../components/Table";
-import RegDoc from "../components/RegDoc";
-import Contact from "../components/Contact";
+import MainBanner from "../components/main/MainBanner";
+import InfoBar from "../components/main/InfoBar";
+import Table from "../components/contact/Table";
+import RegDoc from "../components/main/RegDoc";
+import GoogleMap from "../components/contact/GoogleMap";
+import Infos from "../components/contact/Infos";
 import Footer from "../components/Footer";
 
 const Main = () => (
@@ -25,7 +26,12 @@ const Main = () => (
     <div className="container">
       <h2>Kontakt</h2>
       <Element name="contact" />
-      <Contact />
+      <div className="contact">
+        <div className="contact-left">
+          <GoogleMap />
+        </div>
+        <Infos />
+      </div>
     </div>
     <Footer />
   </div>

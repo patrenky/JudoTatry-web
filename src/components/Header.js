@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => (
-  <div />
+  <div>kde soooom?</div>
 );
 
 export default Header;
