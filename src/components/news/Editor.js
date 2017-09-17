@@ -21,12 +21,13 @@ const formatLinks = text =>
 
 class Editor extends React.Component {
   state = {
-    value: RichTextEditor.createEmptyValue()
+    value: RichTextEditor.createEmptyValue(),
+    title: ""
   };
 
   componentDidMount() {
     this.setState({
-      value: RichTextEditor.createValueFromString("<p>Nová aktualita...</p>", "html")
+      value: RichTextEditor.createValueFromString("<p>Text aktuality...</p>", "html")
     });
   }
 
@@ -34,10 +35,27 @@ class Editor extends React.Component {
     this.setState({ value });
   };
 
+  onTitle = e => {
+    this.setState({ title: e.target.value });
+  };
+
   render() {
     return (
       <div>
         <p>Tvoj editor:</p>
+        <input
+          type="text"
+          placeholder="Nadpis aktuality"
+          onChange={this.onTitle}
+          style={{
+            width: "98%",
+            padding: "1%",
+            marginBottom: ".3em",
+            border: "solid 1px #e2e2e2",
+            borderRadius: "3px",
+            outline: "none"
+          }}
+        />
         <RichTextEditor
           value={this.state.value}
           onChange={this.onChange}
@@ -46,7 +64,9 @@ class Editor extends React.Component {
         <p>Môj výstup:</p>
         <textarea
           rows={10}
-          value={formatLinks(this.state.value.toString("html"))}
+          value={`{title: "${this.state.title}", time: "${new Date()}", text: "${formatLinks(
+            this.state.value.toString("html")
+          )}"}`}
           onChange={() => null}
           style={{
             marginTop: ".5em",
