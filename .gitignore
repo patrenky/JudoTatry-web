@@ -20,5 +20,3 @@ yarn-error.log*
 
 src/styles/*.css
 .vscode
-
-src/enums/news.js
