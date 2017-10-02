@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import { compose, withState } from "recompose";
+import { connect } from "react-redux";
+import { compose, withState, lifecycle } from "recompose";
 import Waypoint from "react-waypoint";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -11,6 +12,8 @@ import News from "./containers/News";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Admin from "./containers/Admin";
+
+import { readFile } from "./actions";
 
 const App = ({ store, pinnedHeader, pinHeader }) => {
   return (
@@ -36,4 +39,12 @@ const App = ({ store, pinnedHeader, pinHeader }) => {
   );
 };
 
-export default compose(withState("pinnedHeader", "pinHeader", false))(App);
+export default compose(
+  withState("pinnedHeader", "pinHeader", false),
+  connect(null, { readFile }),
+  lifecycle({
+    componentDidMount() {
+      this.props.readFile();
+    }
+  })
+)(App);

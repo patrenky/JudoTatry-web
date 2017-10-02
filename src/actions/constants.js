@@ -1,1 +1,1 @@
-export const CONSTANT = 'CONSTANT';
+export const NEWS = 'NEWS';

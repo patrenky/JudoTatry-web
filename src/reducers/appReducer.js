@@ -1,12 +1,12 @@
-import * as c from '../actions/constants';
+import { NEWS } from "../actions/constants";
 
 const initialState = {
-  sample: {},
+  news: []
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case c.CONSTANT:
+    case NEWS:
       return { ...state, ...action.payload };
     default:
       return state;

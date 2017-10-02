@@ -1,19 +1,18 @@
 import React from "react";
 import Parser from "html-react-parser";
-import { compose } from "recompose";
+import { connect } from "react-redux";
 import { map } from "lodash";
 
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 
-import { data } from "../enums/news";
-import { formatDate } from '../utils';
+import { formatDate } from "../utils";
 
-const News = () => (
+const News = ({ news }) => (
   <div>
     <Banner />
     <div className="container news">
-      {map(data, (item, i) => (
+      {map(news, (item, i) => (
         <div className="news-row" key={`${i}-${item.timeStamp}`}>
           <p className="news-title">{item.title}</p>
           <p className="news-time">{formatDate(item.time)}</p>
@@ -25,4 +24,4 @@ const News = () => (
   </div>
 );
 
-export default compose()(News);
+export default connect(({ app: { news } }) => ({ news }), null)(News);

@@ -1,23 +1,14 @@
 import React from "react";
 import RichTextEditor from "react-rte";
 
-const toolbarConfig = {
-  display: ["INLINE_STYLE_BUTTONS", "BLOCK_TYPE_BUTTONS", "LINK_BUTTONS", "HISTORY_BUTTONS"],
-  INLINE_STYLE_BUTTONS: [
-    { label: "Bold", style: "BOLD", className: "custom-css-class" },
-    { label: "Italic", style: "ITALIC" }
-  ],
-  BLOCK_TYPE_BUTTONS: [
-    { label: "UL", style: "unordered-list-item" },
-    { label: "OL", style: "ordered-list-item" }
-  ]
-};
+import { toolbarConfig } from "./toolbarConfig";
 
-const formatLinks = text =>
+const formatText = text =>
   text
     .replace(/href="www/g, "href='http://www")
     .replace(/<a /g, "<a target='_blank' ")
-    .replace(/"/g, "'");
+    .replace(/"/g, "'")
+    .replace(/\n/g, "");
 
 class Editor extends React.Component {
   state = {
@@ -27,7 +18,7 @@ class Editor extends React.Component {
 
   componentDidMount() {
     this.setState({
-      value: RichTextEditor.createValueFromString("<p>Text aktuality...</p>", "html")
+      value: RichTextEditor.createValueFromString("<p>Text aktuality</p>", "html")
     });
   }
 
@@ -39,10 +30,17 @@ class Editor extends React.Component {
     this.setState({ title: e.target.value });
   };
 
+  onSubmit = () => {
+    this.props.addNew({
+      title: this.state.title,
+      time: new Date().toString(),
+      text: formatText(this.state.value.toString("html"))
+    });
+  };
+
   render() {
     return (
       <div>
-        <p>Tvoj editor:</p>
         <input
           type="text"
           placeholder="Nadpis aktuality"
@@ -61,24 +59,19 @@ class Editor extends React.Component {
           onChange={this.onChange}
           toolbarConfig={toolbarConfig}
         />
-        <p>Môj výstup:</p>
-        <textarea
-          rows={10}
-          value={`{title: "${this.state.title}", time: "${new Date()}", text: "${formatLinks(
-            this.state.value.toString("html")
-          )}"}`}
-          onChange={() => null}
+        <button
           style={{
-            marginTop: ".5em",
-            marginBottom: "1em",
-            width: "99.5%",
-            resize: "none",
+            marginTop: ".3em",
+            marginBottom: ".3em",
+            paddingTop: ".3em",
             border: "solid 1px #e2e2e2",
-            borderRadius: "5px",
-            outline: "none"
+            background: "transparent",
+            borderRadius: "3px"
           }}
-        />
-        <p>Server coming soon...</p>
+          onClick={this.onSubmit}
+        >
+          Pridať
+        </button>
       </div>
     );
   }
