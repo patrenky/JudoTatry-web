@@ -1,6 +1,16 @@
-import { NEWS } from "./constants";
+import { NEWS, ADMIN } from "./constants";
+import { admin } from "../enums/admin";
 
 // http://debugme.6f.sk
+
+export const login = ({ username, password }) => dispatch => {
+  if (username === admin.username && password === admin.password)
+    dispatch({
+      type: ADMIN,
+      payload: { admin: true }
+    });
+  return false;
+};
 
 const writeFile = news => async dispatch => {
   try {

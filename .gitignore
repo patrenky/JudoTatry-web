@@ -20,3 +20,6 @@ yarn-error.log*
 
 src/styles/*.css
 .vscode
+
+# credentials
+src/enums/admin.js
