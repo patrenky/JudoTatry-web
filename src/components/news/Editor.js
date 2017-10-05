@@ -1,14 +1,8 @@
 import React from "react";
+// import { compose, withHandlers } from "recompose";
 import RichTextEditor from "react-rte";
 
-import { toolbarConfig } from "./toolbarConfig";
-
-const formatText = text =>
-  text
-    .replace(/href="www/g, "href='http://www")
-    .replace(/<a /g, "<a target='_blank' ")
-    .replace(/"/g, "'")
-    .replace(/\n/g, "");
+import { toolbarConfig, formatText } from "../../utils/editor";
 
 class Editor extends React.Component {
   state = {
@@ -18,7 +12,7 @@ class Editor extends React.Component {
 
   componentDidMount() {
     this.setState({
-      value: RichTextEditor.createValueFromString("<p>Text aktuality</p>", "html")
+      value: RichTextEditor.createValueFromString("<p>Text novej aktuality</p>", "html")
     });
   }
 
@@ -40,36 +34,20 @@ class Editor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="editor">
         <input
           type="text"
           placeholder="Nadpis aktuality"
           onChange={this.onTitle}
-          style={{
-            width: "98%",
-            padding: "1%",
-            marginBottom: ".3em",
-            border: "solid 1px #e2e2e2",
-            borderRadius: "3px",
-            outline: "none"
-          }}
+          className="editor-title"
         />
         <RichTextEditor
           value={this.state.value}
           onChange={this.onChange}
           toolbarConfig={toolbarConfig}
+          className="editor-field"
         />
-        <button
-          style={{
-            marginTop: ".3em",
-            marginBottom: ".3em",
-            paddingTop: ".3em",
-            border: "solid 1px #e2e2e2",
-            background: "transparent",
-            borderRadius: "3px"
-          }}
-          onClick={this.onSubmit}
-        >
+        <button onClick={this.onSubmit} className="editor-button">
           Pridať
         </button>
       </div>

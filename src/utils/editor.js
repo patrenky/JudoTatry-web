@@ -9,3 +9,10 @@ export const toolbarConfig = {
     { label: "OL", style: "ordered-list-item" }
   ]
 };
+
+export const formatText = text =>
+  text
+    .replace(/href="www/g, "href='http://www")
+    .replace(/<a /g, "<a target='_blank' ")
+    .replace(/"/g, "'")
+    .replace(/\n/g, "");

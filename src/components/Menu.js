@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import { compose, withState, withHandlers } from "recompose";
 import { withRouter } from "react-router-dom";
+import { compose, withState, withHandlers } from "recompose";
 
 import Logo from "../assets/img/logo.png";
 

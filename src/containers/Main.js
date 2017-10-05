@@ -3,6 +3,7 @@ import { Element } from "react-scroll";
 
 import MainBanner from "../components/main/MainBanner";
 import InfoBar from "../components/main/InfoBar";
+import News from "../components/main/News";
 import Table from "../components/contact/Table";
 import RegDoc from "../components/main/RegDoc";
 import GoogleMap from "../components/contact/GoogleMap";
@@ -14,17 +15,15 @@ const Main = () => (
     <MainBanner />
     <Element name="content" />
     <InfoBar />
+    <RegDoc />
     <Element name="trainings" />
     <div className="container">
-      <h2>Tréningy</h2>
+      {/* <h2>Tréningy</h2> */}
       <Table />
     </div>
-    <RegDoc />
-    {/* <div className="container">
-      <h2>Aktuality</h2>
-    </div> */}
+    <News />
     <div className="container">
-      <h2>Kontakt</h2>
+      {/* <h2>Kontakt</h2> */}
       <Element name="contact" />
       <div className="contact">
         <div className="contact-left">

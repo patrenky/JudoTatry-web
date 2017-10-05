@@ -3,8 +3,9 @@
 $c-white: #fff;
 $c-black: #000;
 $c-text: #555;
-$c-grey-light: #eee;
 $c-grey-dark: #222;
+$c-grey-primary: #e2e2e2;
+$c-grey-light: #eee;
 $c-blue-dark: #083d77;
 $c-blue-primary: #3366cc;
 $c-blue-light: #bbddfe;
@@ -21,7 +22,7 @@ $breakpoint-mobile: 450px;
 body {
     margin: 0;
     padding: 0;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-family: "Century Gothic", CenturyGothic, Arial, sans-serif;
     color: $c-text;
     -webkit-font-smoothing: antialiased;
 }
@@ -37,9 +38,16 @@ button:focus,
     max-width: 1300px;
     margin: 0 auto;
     padding-top: 1em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
     margin-bottom: 2em;
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .container {
+        padding-left: .5em;
+        padding-right: .5em;
+    }
 }
 
 h2 {
@@ -49,19 +57,11 @@ h2 {
 
 .reg-link {
     font-size: 1.2em;
-    color: $c-blue-dark;
+    color: $c-blue-primary;
     cursor: pointer;
     &:hover {
-        text-decoration: underline;
+        color: $c-blue-dark;
     }
-    i {
-        margin-right: 0.5em;
-    }
-}
-
-.opening-text {
-    text-align: center;
-    color: $c-blue-dark;
     i {
         margin-right: 0.5em;
     }
@@ -369,8 +369,14 @@ h2 {
     justify-content: center;
     align-items: center;
     &-left {
+        display: flex;
+        align-items: center;
         flex-basis: 60%;
         height: 620px;
+        img {
+            width: 100%;
+            max-height: 100%;
+        }
     }
     &-info {
         flex-basis: 35%;
@@ -519,15 +525,27 @@ h2 {
 
 .news {
     &-row {
-        margin-bottom: 5em;
+        margin-bottom: 2em;
+    }
+    &-admin {
+        padding: 10px;
+        &:hover {
+            background-color: lighten($c-grey-light, 2);
+        }
     }
     &-title {
-        text-align: center;
+        text-align: left;
         color: $c-blue-primary;
         font-size: 1.5em;
+        margin-bottom: 0;
+        .fa {
+            margin-left: .5em;
+            color: $c-blue-dark;
+            cursor: pointer;
+        }
     }
     &-time {
-        padding-left: 1em;
+        margin-top: .5em;
         font-size: 0.8em;
         color: darken($c-grey-light, 20);
     }
@@ -539,6 +557,32 @@ h2 {
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+    &-more {
+        color: $c-blue-primary;
+        text-align: right;
+        cursor: pointer;
+        &:hover {
+            color: $c-blue-dark;
+        }
+        i {
+            margin-left: .5em;
+        }
+    }
+    &-empty {
+        height: 50vh;
+        font-size: 2em;
+        .fa {
+            margin-left: .5em;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .news {
+        &-title {
+            text-align: center;
         }
     }
 }
@@ -577,8 +621,8 @@ h2 {
         border-radius: 3px;
         cursor: pointer;
         &:hover {
-          border-color: $c-blue-dark;
-          background-color: $c-blue-dark;
+            border-color: $c-blue-dark;
+            background-color: $c-blue-dark;
         }
     }
 }
@@ -586,12 +630,33 @@ h2 {
 
 /* EDITOR */
 
+.editor {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    &-title {
+        padding: 10px;
+        margin-bottom: .3em;
+        border: solid 1px $c-grey-primary;
+        border-radius: 3px;
+    } // &-field {}
+    &-button {
+        align-self: flex-end;
+        margin-top: .3em;
+        margin-bottom: .3em;
+        padding: 8px 15px 6px;
+        border: solid 1px $c-grey-primary;
+        background: transparent;
+        border-radius: 3px;
+    }
+}
+
 
 /* FOOTER */
 
 .footer {
     width: 100%;
-    margin-top: 2em;
+    margin-top: 3em;
     background-color: $c-grey-dark;
     color: $c-white;
     text-align: center;
@@ -624,8 +689,21 @@ h2 {
             min-width: 100px;
             cursor: pointer;
             &:hover {
-                color: $c-blue-light;
+                text-decoration: underline;
             }
+            .fa {
+                margin-left: .5em;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .footer {
+        &-copyright,
+        &-sitemap {
+            flex-basis: 100%;
+            flex-direction: column;
         }
     }
 }

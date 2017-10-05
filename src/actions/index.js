@@ -1,8 +1,7 @@
 import { NEWS, ADMIN } from "./constants";
 import { admin } from "../enums/admin";
 
-// http://debugme.6f.sk
-
+/** LOGIN */
 export const login = ({ username, password }) => dispatch => {
   if (username === admin.username && password === admin.password)
     dispatch({
@@ -12,6 +11,10 @@ export const login = ({ username, password }) => dispatch => {
   return false;
 };
 
+/** 
+ * API
+ * http://debugme.6f.sk
+ */
 const writeFile = news => async dispatch => {
   try {
     const data = encodeURIComponent(JSON.stringify(news));
@@ -34,6 +37,7 @@ export const readFile = () => async dispatch => {
   } catch (e) {}
 };
 
+/** ADMIN */
 export const addNew = data => (dispatch, getState) => {
   const news = getState().app.news;
   dispatch(writeFile([data, ...news]));

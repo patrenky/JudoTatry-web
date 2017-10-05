@@ -12,13 +12,23 @@ const News = ({ news }) => (
   <div>
     <Banner />
     <div className="container news">
-      {map(news, (item, i) => (
-        <div className="news-row" key={`${i}-${item.timeStamp}`}>
-          <p className="news-title">{item.title}</p>
-          <p className="news-time">{formatDate(item.time)}</p>
-          <div className="news-text">{Parser(item.text)}</div>
+      <h2>Aktuality</h2>
+      {news.length ? (
+        map(news, (item, i) => (
+          <div className="news-row" key={`${i}-${item.timeStamp}`}>
+            <p className="news-title">{item.title}</p>
+            <p className="news-time">{formatDate(item.time)}</p>
+            <div className="news-text">{Parser(item.text)}</div>
+          </div>
+        ))
+      ) : (
+        <div className="flex-row flex-centered news-empty">
+          <p>
+            Žiadne aktuality...
+            <i className="fa fa-frown-o" />
+          </p>
         </div>
-      ))}
+      )}
     </div>
     <Footer />
   </div>

@@ -18,11 +18,16 @@ const Admin = ({ admin, news, addNew }) => {
       <div>
         <Banner />
         <div className="container news">
-          <p className="news-title">Nová aktualita</p>
+          <h2>Vitaj späť Silvinka!</h2>
           <Editor addNew={addNew} />
           {map(news, (item, i) => (
-            <div className="news-row" key={`${i}-${item.timeStamp}`}>
-              <p className="news-title">{item.title}</p>
+            <div className="news-row news-admin" key={`${i}-${item.timeStamp}`}>
+              <p className="news-title">
+                {item.title}
+                <i className="fa fa-pencil" />
+                <i className="fa fa-trash-o" />
+                {/* <i className="fa fa-check" /> */}
+              </p>
               <p className="news-time">{formatDate(item.time)}</p>
               <div className="news-text">{Parser(item.text)}</div>
             </div>
@@ -31,7 +36,7 @@ const Admin = ({ admin, news, addNew }) => {
         <Footer />
       </div>
     );
-  return <Login />
+  return <Login />;
 };
 
 export default compose(connect(({ app: { admin, news } }) => ({ admin, news }), { addNew }))(Admin);
