@@ -23,19 +23,19 @@ const Infos = () => (
       ssedlackova.silvia@gmail.com
     </p>
     <p className="contact-row">
+      <i className="fa fa-credit-card" />
+      Fio banka, a.s.
+    </p>
+    <p className="contact-row">
+      <span className="title">Č. účtu:</span>
+      <span className="text">SK51 8330 0000 0023 0130 6133</span>
+    </p>
+    <p className="contact-row">
       <span className="title">IČO:</span>
       <span className="text">50 590 723</span>
     </p>
     <p className="contact-row">
       <span className="title">DIČ:</span>
-      <span className="text">-</span>
-    </p>
-    <p className="contact-row">
-      <span className="title">Č. účtu:</span>
-      <span className="text">-</span>
-    </p>
-    <p className="contact-row">
-      <span className="title">IBAN:</span>
       <span className="text">-</span>
     </p>
     <FacebookProvider appId="1914498592142320">
