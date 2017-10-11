@@ -387,6 +387,7 @@ h2 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
         border-bottom: 1px solid $c-grey-light;
         padding-bottom: 0.5em;
         i {
@@ -541,7 +542,12 @@ h2 {
         .fa {
             margin-left: .5em;
             color: $c-blue-dark;
+            opacity: .5;
             cursor: pointer;
+            transition: opacity 0.1s;
+            &:hover {
+                opacity: 1;
+            }
         }
     }
     &-time {

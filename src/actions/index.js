@@ -1,3 +1,4 @@
+import { filter } from "lodash";
 import { NEWS, ADMIN } from "./constants";
 import { admin } from "../enums/admin";
 
@@ -11,10 +12,7 @@ export const login = ({ username, password }) => dispatch => {
   return false;
 };
 
-/** 
- * API
- * http://debugme.6f.sk
- */
+/** API http://debugme.6f.sk */
 const writeFile = news => async dispatch => {
   try {
     const data = encodeURIComponent(JSON.stringify(news));
@@ -41,4 +39,9 @@ export const readFile = () => async dispatch => {
 export const addNew = data => (dispatch, getState) => {
   const news = getState().app.news;
   dispatch(writeFile([data, ...news]));
+};
+
+export const removeNew = idx => (dispatch, getState) => {
+  const news = getState().app.news;
+  dispatch(writeFile(filter(news, (_, i) => i !== idx)));
 };
