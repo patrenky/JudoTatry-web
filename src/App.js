@@ -13,7 +13,7 @@ import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Admin from "./containers/Admin";
 
-import { readFile } from "./actions";
+import { getNews } from "./actions";
 
 const App = ({ store, pinnedHeader, pinHeader }) => {
   return (
@@ -41,10 +41,10 @@ const App = ({ store, pinnedHeader, pinHeader }) => {
 
 export default compose(
   withState("pinnedHeader", "pinHeader", false),
-  connect(null, { readFile }),
+  connect(null, { getNews }),
   lifecycle({
     componentDidMount() {
-      this.props.readFile();
+      this.props.getNews();
     }
   })
 )(App);

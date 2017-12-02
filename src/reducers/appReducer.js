@@ -1,4 +1,4 @@
-import { NEWS, ADMIN } from "../actions/constants";
+import { SET } from "../actions/constants";
 
 const initialState = {
   news: [],
@@ -7,9 +7,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case NEWS:
-      return { ...state, ...action.payload };
-    case ADMIN:
+    case SET:
       return { ...state, ...action.payload };
     default:
       return state;

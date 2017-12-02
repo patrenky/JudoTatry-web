@@ -2,7 +2,7 @@ import React from "react";
 // import { compose, withHandlers } from "recompose";
 import RichTextEditor from "react-rte";
 
-import { toolbarConfig, formatText } from "../../utils/editor";
+import { toolbarConfig, formatTimestamp, formatText } from "../../utils/editor";
 
 class Editor extends React.Component {
   state = {
@@ -25,9 +25,9 @@ class Editor extends React.Component {
   };
 
   onSubmit = () => {
-    this.props.addNew({
+    this.props.createNew({
       title: this.state.title,
-      time: new Date().toString(),
+      time: formatTimestamp(new Date().toString()),
       text: formatText(this.state.value.toString("html"))
     });
   };

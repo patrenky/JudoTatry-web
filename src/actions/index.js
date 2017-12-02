@@ -1,47 +1,66 @@
-import { filter } from "lodash";
-import { NEWS, ADMIN } from "./constants";
+import { reverse } from "lodash";
+import { SET } from "./constants";
+import fetch from "../utils/fetch";
 import { admin } from "../enums/admin";
 
 /** LOGIN */
 export const login = ({ username, password }) => dispatch => {
   if (username === admin.username && password === admin.password)
     dispatch({
-      type: ADMIN,
+      type: SET,
       payload: { admin: true }
     });
   return false;
 };
 
-/** API http://debugme.6f.sk */
-const writeFile = news => async dispatch => {
+/** NEWS */
+export const getNews = () => async dispatch => {
   try {
-    const data = encodeURIComponent(JSON.stringify(news));
-    await fetch(`/api?write=${data}`);
+    const response = await fetch("/api/news/read.php");
+    const news = await response.json();
+
     dispatch({
-      type: NEWS,
-      payload: { news }
+      type: SET,
+      payload: { news: reverse(news) }
     });
   } catch (e) {}
 };
 
-export const readFile = () => async dispatch => {
+export const createNew = data => async dispatch => {
   try {
-    const response = await fetch("/api?read=true");
-    const body = await response.json();
-    dispatch({
-      type: NEWS,
-      payload: { news: JSON.parse(body) }
+    const response = await fetch("/api/news/create.php", {
+      method: "POST",
+      body: JSON.stringify(data)
     });
+    const status = await response.json();
+    console.log(status);
+
+    dispatch(getNews());
   } catch (e) {}
 };
 
-/** ADMIN */
-export const addNew = data => (dispatch, getState) => {
-  const news = getState().app.news;
-  dispatch(writeFile([data, ...news]));
+export const deleteNew = id => async dispatch => {
+  try {
+    const response = await fetch("/api/news/delete.php", {
+      method: "POST",
+      body: JSON.stringify({ id })
+    });
+    const status = await response.json();
+    console.log(status);
+
+    dispatch(getNews());
+  } catch (e) {}
 };
 
-export const removeNew = idx => (dispatch, getState) => {
-  const news = getState().app.news;
-  dispatch(writeFile(filter(news, (_, i) => i !== idx)));
+export const updateNew = data => async dispatch => {
+  try {
+    const response = await fetch("/api/news/update.php", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+    const status = await response.json();
+    console.log(status);
+
+    dispatch(getNews());
+  } catch (e) {}
 };

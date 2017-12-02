@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export const toolbarConfig = {
   display: ["INLINE_STYLE_BUTTONS", "BLOCK_TYPE_BUTTONS", "LINK_BUTTONS", "HISTORY_BUTTONS"],
   INLINE_STYLE_BUTTONS: [
@@ -16,3 +18,5 @@ export const formatText = text =>
     .replace(/<a /g, "<a target='_blank' ")
     .replace(/"/g, "'")
     .replace(/\n/g, "");
+
+export const formatTimestamp = date => format(date, "YYYY-MM-DD");

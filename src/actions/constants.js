@@ -1,2 +1,1 @@
-export const NEWS = 'NEWS';
-export const ADMIN = 'ADMIN';
+export const SET = 'SET';
