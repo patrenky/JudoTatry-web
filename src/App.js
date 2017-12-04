@@ -11,6 +11,7 @@ import Main from "./containers/Main";
 import News from "./containers/News";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
+import Login from './containers/Login';
 import Admin from "./containers/Admin";
 
 import { getNews } from "./actions";
@@ -31,6 +32,7 @@ const App = ({ store, pinnedHeader, pinHeader }) => {
             <Route path="/aktuality" component={News} />
             <Route path="/judo" component={About} />
             <Route path="/kontakt" component={Contact} />
+            <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
           </div>
         </ScrollToTop>

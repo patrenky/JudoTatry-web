@@ -1,15 +1,16 @@
 import { reverse } from "lodash";
 import { SET } from "./constants";
+import * as storage from "../utils/storage";
 import fetch from "../utils/fetch";
 import { admin } from "../enums/admin";
 
 /** LOGIN */
 export const login = ({ username, password }) => dispatch => {
-  if (username === admin.username && password === admin.password)
-    dispatch({
-      type: SET,
-      payload: { admin: true }
-    });
+  if (username === admin.username && password === admin.password) {
+    const token = Date.now() + 1000 * 60 * 30;
+    storage.set("token", token);
+    return true;
+  }
   return false;
 };
 

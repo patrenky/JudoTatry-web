@@ -27,10 +27,6 @@ class News {
             SET title=:title, time=:time, text=:text";
         $stmt = $this->conn->prepare($query);
 
-        $this->title=htmlspecialchars(strip_tags($this->title));
-        $this->time=htmlspecialchars(strip_tags($this->time));
-        $this->text=htmlspecialchars(strip_tags($this->text));
-
         $stmt->bindParam(":title", $this->title);
         $stmt->bindParam(":time", $this->time);
         $stmt->bindParam(":text", $this->text);
@@ -48,11 +44,6 @@ class News {
             WHERE id = :id";
         $stmt = $this->conn->prepare($query);
 
-        $this->title=htmlspecialchars(strip_tags($this->title));
-        $this->time=htmlspecialchars(strip_tags($this->time));
-        $this->text=htmlspecialchars(strip_tags($this->text));
-        $this->id=htmlspecialchars(strip_tags($this->id));
-
         $stmt->bindParam(":title", $this->title);
         $stmt->bindParam(":time", $this->time);
         $stmt->bindParam(":text", $this->text);
@@ -69,7 +60,6 @@ class News {
         $query = "DELETE FROM news WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         
-        $this->id=htmlspecialchars(strip_tags($this->id));
         $stmt->bindParam(":id", $this->id);
 
         if(!$stmt->execute()){
