@@ -1,8 +1,7 @@
 import { SET } from "../actions/constants";
 
 const initialState = {
-  news: [],
-  admin: false
+  news: []
 };
 
 const reducer = (state = initialState, action) => {

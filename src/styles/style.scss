@@ -87,6 +87,10 @@ h2 {
     align-items: center;
 }
 
+.flex-end {
+    justify-content: flex-end;
+}
+
 
 /* HEADER */
 
@@ -583,6 +587,12 @@ h2 {
             margin-left: .5em;
         }
     }
+    &-add {
+        color: $c-blue-dark;
+        font-size: 1.5em;
+        text-align: center;
+        cursor: pointer;
+    }
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -647,13 +657,18 @@ h2 {
         border-radius: 3px;
     } // &-field {}
     &-button {
-        align-self: flex-end;
-        margin-top: .3em;
-        margin-bottom: .3em;
+        margin: .3em 0 .3em .3em;
         padding: 8px 15px 6px;
-        border: solid 1px $c-grey-primary;
-        background: transparent;
         border-radius: 3px;
+        color: $c-white;
+        &.cancel {
+            border: solid 1px $c-error;
+            background-color: $c-error;
+        }
+        &.submit {
+            border: solid 1px $c-blue-primary;
+            background-color: $c-blue-primary;
+        }
     }
 }
 

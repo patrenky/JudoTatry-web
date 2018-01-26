@@ -1,5 +1,4 @@
 import React from "react";
-import Parser from "html-react-parser";
 import { connect } from "react-redux";
 import { compose, withState } from "recompose";
 import { map } from "lodash";
@@ -7,53 +6,30 @@ import { map } from "lodash";
 import Auth from './Auth';
 import Banner from "../components/Banner";
 import Editor from "../components/news/Editor";
+import NewItem from "../components/news/NewItem";
 import Footer from "../components/Footer";
 
-import { formatDate } from "../utils";
-import { createNew, deleteNew } from "../actions";
+import { createNew } from "../actions";
 
-const NewItem = compose(
-  connect(null, { deleteNew }),
-  withState("isDelete", "setDelete", false)
-)(({ data, deleteNew, isDelete, setDelete }) => (
-  <div className="news-row news-admin">
-    <p className="news-title">
-      {data.title}
-      {/* <i className="fa fa-pencil" /> */}
-      {isDelete ? (
-        <span>
-          <i
-            className="fa fa-check"
-            onClick={() => {
-              deleteNew(data.id);
-              setDelete(false);
-            }}
-          />
-          <i className="fa fa-times" onClick={() => setDelete(false)} />
-        </span>
-      ) : (
-        <i className="fa fa-trash-o" onClick={() => setDelete(true)} />
-      )}
-    </p>
-    <p className="news-time">{formatDate(data.time)}</p>
-    <div className="news-text">{Parser(data.text)}</div>
-  </div>
-));
-
-const Admin = ({ admin, news, createNew }) => (
+const Admin = ({ news, createNew, isEditing, setEditing }) => (
   <div>
     <Auth />
     <Banner />
     <div className="container news">
-      <h2>Vitaj späť Silvinka!</h2>
-      {/* <h5>Novinka: už dokážeš vymazať príspevok pomocou ikonky koša</h5> */}
-      <Editor createNew={createNew} />
+      <h2>Vitaj späť pani tréner!</h2>
+      {isEditing ?
+        <Editor action={createNew} closeEditor={() => setEditing(false)} />
+        :
+        <p className="news-add" onClick={() => setEditing(true)}>
+          <i className="fa fa-fw fa-plus" />Pridať šťavnatú aktualitku
+        </p>}
       {map(news, (item, i) => <NewItem key={`${i}-${item.timeStamp}`} data={item} />)}
     </div>
     <Footer />
   </div>
 );
 
-export default compose(connect(({ app: { admin, news } }) => ({ admin, news }), { createNew }))(
-  Admin
-);
+export default compose(
+  connect(({ app: { news } }) => ({ news }), { createNew }),
+  withState("isEditing", "setEditing", false)
+)(Admin);

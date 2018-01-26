@@ -7,7 +7,7 @@ import { admin } from "../enums/admin";
 /** LOGIN */
 export const login = ({ username, password }) => dispatch => {
   if (username === admin.username && password === admin.password) {
-    const token = Date.now() + 1000 * 60 * 30;
+    const token = Date.now() + 1000 * 60 * 60;
     storage.set("token", token);
     return true;
   }
