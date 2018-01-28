@@ -18,6 +18,7 @@ const Editor = ({ title, onTitle, text, onText, closeEditor, onSubmit, initialDa
       onChange={(e) => onText(e)}
       toolbarConfig={toolbarConfig}
       className="editor-field"
+      placeholder="Text aktuality"
     />
     <div className="flex-row flex-end">
       <button onClick={() => closeEditor()} className="editor-button cancel">
@@ -39,7 +40,7 @@ export default compose(
       const { initialData, onTitle, onText } = this.props;
       onTitle(initialData ? initialData.title : "");
       onText(RichTextEditor.createValueFromString(
-        initialData ? initialData.text : "<p>Text novej aktuality</p>", "html")
+        initialData ? initialData.text : "", "html")
       );
     }
   }),

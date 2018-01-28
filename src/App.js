@@ -13,6 +13,7 @@ import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Login from './containers/Login';
 import Admin from "./containers/Admin";
+import SupportUs from "./containers/SupportUs";
 
 import { getNews } from "./actions";
 
@@ -34,6 +35,7 @@ const App = ({ store, pinnedHeader, pinHeader }) => {
             <Route path="/kontakt" component={Contact} />
             <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
+            <Route path="/podporte-nas" component={SupportUs} />
           </div>
         </ScrollToTop>
       </Router>

@@ -17,6 +17,7 @@ const Footer = ({ history }) => (
         <p onClick={() => history.push("/judo")}>Judo</p>
         <p onClick={() => history.push("/kontakt")}>Kontakt</p>
         <p onClick={() => history.push("/admin")}>Admin</p>
+        <p onClick={() => history.push("/podporte-nas")}>Podporte nás</p>
         <p
           onClick={() =>
             animateScroll.scrollToTop({

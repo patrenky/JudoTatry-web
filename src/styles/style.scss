@@ -655,6 +655,7 @@ h2 {
         margin-bottom: .3em;
         border: solid 1px $c-grey-primary;
         border-radius: 3px;
+        font-family: inherit;
     } // &-field {}
     &-button {
         margin: .3em 0 .3em .3em;
@@ -670,6 +671,10 @@ h2 {
             background-color: $c-blue-primary;
         }
     }
+}
+
+.DraftEditor-root {
+    font-family: "Century Gothic", CenturyGothic, Arial, sans-serif;
 }
 
 
