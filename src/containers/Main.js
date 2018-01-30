@@ -5,7 +5,7 @@ import MainBanner from "../components/main/MainBanner";
 import InfoBar from "../components/main/InfoBar";
 import News from "../components/main/News";
 import Table from "../components/contact/Table";
-import SupportUsLink from "../components/main/SupportUsLink";
+import Links from "../components/main/Links";
 import GoogleMap from "../components/contact/GoogleMap";
 import Infos from "../components/contact/Infos";
 import Footer from "../components/Footer";
@@ -15,7 +15,7 @@ const Main = () => (
     <MainBanner />
     <Element name="content" />
     <InfoBar />
-    <SupportUsLink />
+    <Links />
     <Element name="trainings" />
     <div className="container">
       {/* <h2>Tréningy</h2> */}

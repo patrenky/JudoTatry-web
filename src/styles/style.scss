@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 /* COLORS */
 
 $c-white: #fff;
@@ -676,6 +679,30 @@ h2 {
 .DraftEditor-root {
     font-family: "Century Gothic", CenturyGothic, Arial, sans-serif;
 }
+
+
+/* CAROUSEL */
+
+.slick-slider {
+    width: 90%;
+    align-self: center;
+    .slick-prev:before,
+    .slick-next:before {
+      color: $c-grey-dark;
+    }
+  }
+  
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    &-image {
+      height: 7em;
+      margin: .2em;
+    }
+  }
 
 
 /* FOOTER */

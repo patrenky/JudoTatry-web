@@ -14,6 +14,7 @@ import Contact from "./containers/Contact";
 import Login from './containers/Login';
 import Admin from "./containers/Admin";
 import SupportUs from "./containers/SupportUs";
+import Summer from "./containers/Summer";
 
 import { getNews } from "./actions";
 
@@ -36,6 +37,7 @@ const App = ({ store, pinnedHeader, pinHeader }) => {
             <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
             <Route path="/podporte-nas" component={SupportUs} />
+            <Route path="/letne-sustredenie" component={Summer} />
           </div>
         </ScrollToTop>
       </Router>

@@ -1,8 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-const SupportUsLink = ({ history }) => (
+const Links = ({ history }) => (
   <div className="container">
+    <br />
+    <div className="flex-row flex-centered">
+      <p className="reg-link" onClick={() => history.push("/letne-sustredenie")}>
+        <i className="fa fa-sun-o" />
+        Letné sústredenie
+      </p>
+    </div>
     <div className="flex-row flex-centered">
       <p className="reg-link" onClick={() => history.push("/podporte-nas")}>
         <i className="fa fa-users" />
@@ -12,4 +19,4 @@ const SupportUsLink = ({ history }) => (
   </div>
 );
 
-export default withRouter(SupportUsLink);
+export default withRouter(Links);
