@@ -5,9 +5,9 @@ const Links = ({ history }) => (
   <div className="container">
     <br />
     <div className="flex-row flex-centered">
-      <p className="reg-link" onClick={() => history.push("/letne-sustredenie")}>
+      <p className="reg-link bigger" onClick={() => history.push("/letne-sustredenie")}>
         <i className="fa fa-sun-o" />
-        Letné sústredenie
+        Letné sústredenie + inštrukcie
       </p>
     </div>
     <div className="flex-row flex-centered">

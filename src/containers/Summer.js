@@ -21,6 +21,9 @@ import img13 from "../assets/img/summer/13.jpg";
 import img14 from "../assets/img/summer/14.jpg";
 import img15 from "../assets/img/summer/15.jpg";
 
+import doc0 from "../assets/doc/co-zbalit.pdf";
+import doc1 from "../assets/doc/nastup-a-program.pdf";
+
 const SummerSlider = () =>
   <Carousel>
     <img alt="" src={img0} className="carousel-image" />
@@ -49,6 +52,23 @@ const About = () => (
         <div className="news-text">
           <h2>Otvorené športové letné sústredenie</h2>
           <h2 style={{ marginTop: "-0.6em", fontSize: "1.2em" }}>nielen pre naších judistov</h2>
+
+          <br /><br />
+          <div className="flex-row flex-centered">
+            <a className="reg-link" rel="noopener noreferrer" target='_blank' href={doc0}>
+              <i className="fa fa-file-text-o" />
+              Čo zbaliť na sústredenie?
+            </a>
+          </div>
+          <br />
+          <div className="flex-row flex-centered">
+            <a className="reg-link" rel="noopener noreferrer" target='_blank' href={doc1}>
+              <i className="fa fa-file-text-o" />
+              Nástup a program dní
+            </a>
+          </div>
+          <br />
+
           <p>Milí rodičia!</p>
           <p>
             Dožičte svojim deťom nezabudnuteľné prázdniny plné pohybu, humoru, nových skúseností
