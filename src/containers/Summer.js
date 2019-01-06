@@ -4,7 +4,6 @@ import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 
-import img0 from "../assets/img/summer/0.jpg";
 import img1 from "../assets/img/summer/1.jpg";
 import img2 from "../assets/img/summer/2.jpg";
 import img3 from "../assets/img/summer/3.jpg";
@@ -20,13 +19,19 @@ import img12 from "../assets/img/summer/12.jpg";
 import img13 from "../assets/img/summer/13.jpg";
 import img14 from "../assets/img/summer/14.jpg";
 import img15 from "../assets/img/summer/15.jpg";
+import img16 from "../assets/img/summer/16.jpg";
+import img17 from "../assets/img/summer/17.jpg";
+import img18 from "../assets/img/summer/18.jpg";
+import img19 from "../assets/img/summer/19.jpg";
+import img20 from "../assets/img/summer/20.jpg";
+import img21 from "../assets/img/summer/21.jpg";
+import img22 from "../assets/img/summer/22.jpg";
+import img23 from "../assets/img/summer/23.jpg";
 
 import doc0 from "../assets/doc/co-zbalit.pdf";
-import doc1 from "../assets/doc/nastup-a-program.pdf";
 
 const SummerSlider = () =>
   <Carousel>
-    <img alt="" src={img0} className="carousel-image" />
     <img alt="" src={img1} className="carousel-image" />
     <img alt="" src={img2} className="carousel-image" />
     <img alt="" src={img3} className="carousel-image" />
@@ -42,6 +47,14 @@ const SummerSlider = () =>
     <img alt="" src={img13} className="carousel-image" />
     <img alt="" src={img14} className="carousel-image" />
     <img alt="" src={img15} className="carousel-image" />
+    <img alt="" src={img16} className="carousel-image" />
+    <img alt="" src={img17} className="carousel-image" />
+    <img alt="" src={img18} className="carousel-image" />
+    <img alt="" src={img19} className="carousel-image" />
+    <img alt="" src={img20} className="carousel-image" />
+    <img alt="" src={img21} className="carousel-image" />
+    <img alt="" src={img22} className="carousel-image" />
+    <img alt="" src={img23} className="carousel-image" />
   </Carousel>
 
 const About = () => (
@@ -59,14 +72,7 @@ const About = () => (
               <i className="fa fa-file-text-o" />
               Čo zbaliť na sústredenie?
             </a>
-          </div>
-          <br />
-          <div className="flex-row flex-centered">
-            <a className="reg-link" rel="noopener noreferrer" target='_blank' href={doc1}>
-              <i className="fa fa-file-text-o" />
-              Nástup a program dní
-            </a>
-          </div>
+          </div>      
           <br />
 
           <p>Milí rodičia!</p>
@@ -77,7 +83,7 @@ const About = () => (
             jazerom (PL).
           </p>
           <div className="flex-col flex-centered">
-            <h3>od 04.08. do 14.08.2018</h3>
+            <h3>od 19.8. do 29.8.2019</h3>
           </div>
           <p>
             Pre deti je zabezpečené: ubytovanie (pozri{" "}
@@ -92,13 +98,14 @@ const About = () => (
             a samozrejme nové priateľstvá...
           </p>
           <div className="flex-col flex-centered">
-            <p>....v cene 200,- € za celý pobyt dieťaťa.</p>
+            <p>....v cene <b>250 €</b> za celý pobyt dieťaťa.</p>
             <SummerSlider />
           </div>
+          <br />
           <ul>
             <li>počet miest obmedzený</li>
-            <li>predbežné prihlášky do 31.03.2018 + záloha 25%</li>
-            <li>záväzné prihlášky do 15.06.2018 + doplatok do 100% ceny</li>
+            <li>predbežné prihlášky do 31.03.2019 + záloha 25%</li>
+            <li>záväzné prihlášky do 15.06.2019 + doplatok do 100% ceny</li>
             <li>prihlášky a informácie u trénerky</li>
           </ul>
         </div>
