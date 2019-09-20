@@ -16,11 +16,11 @@ const Table = () => (
       <div className="table-col">
         <div className="table-col-row">
           <p className="table-time">16:30 - 17:30</p>
-          <p className="table-categ">MiniJudo</p>
+          <p className="table-categ">1. skupina (MiniJudo)</p>
         </div>
         <div className="table-col-row">
           <p className="table-time">17:30 - 19:00</p>
-          <p className="table-categ">Judo</p>
+          <p className="table-categ">3. skupina (Judo pokročilí)</p>
         </div>
       </div>
     </div>
@@ -29,11 +29,11 @@ const Table = () => (
       <div className="table-col">
         <div className="table-col-row">
           <p className="table-time">16:30 - 17:30</p>
-          <p className="table-categ">MiniJudo</p>
+          <p className="table-categ">2. skupina (Judo mladší)</p>
         </div>
         <div className="table-col-row">
           <p className="table-time">17:30 - 19:00</p>
-          <p className="table-categ">Judo</p>
+          <p className="table-categ">3. skupina (Judo pokročilí)</p>
         </div>
       </div>
     </div>
@@ -41,8 +41,12 @@ const Table = () => (
       <p className="table-day">Piatok</p>
       <div className="table-col">
         <div className="table-col-row">
-          <p className="table-time">16:30 - 18:00</p>
-          <p className="table-categ">MiniJudo + Judo</p>
+          <p className="table-time">16:30 - 17:30</p>
+          <p className="table-categ">1. skupina (MiniJudo)</p>
+        </div>
+        <div className="table-col-row">
+          <p className="table-time">17:30 - 18:30</p>
+          <p className="table-categ">2. skupina (Judo mladší)</p>
         </div>
       </div>
     </div>

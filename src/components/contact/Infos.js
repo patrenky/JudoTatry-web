@@ -7,7 +7,7 @@ const Infos = () => (
     <p className="contact-row">
       <i className="fa fa-user" />
       Mgr. Silvia Sedláčková<br />
-      tréner I. stupňa, I. dan
+      tréner II. stupňa, I. dan
     </p>
     <p className="contact-row">
       <i className="fa fa-map-marker" />
