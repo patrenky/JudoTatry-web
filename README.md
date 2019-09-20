@@ -1,3 +1,3 @@
 # Judo&Tatry web
 
-work in progress...
+http://judotatry.sk
