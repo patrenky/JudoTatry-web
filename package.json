@@ -10,7 +10,7 @@
     "html-react-parser": "^0.3.5",
     "install": "^0.10.4",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "material-ui": "^0.18.1",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
