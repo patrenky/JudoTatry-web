@@ -21,6 +21,9 @@ yarn-error.log*
 src/styles/*.css
 .vscode
 
+yarn.lock
+package-lock.json
+
 # credentials
 src/enums/admin.js
 api/config/database.php

@@ -5,6 +5,9 @@ import FacebookProvider, { Page } from "react-facebook";
 const Infos = () => (
   <div className="contact-info">
     <p className="contact-row">
+      <b>JUDO&amp;TATRY občianske združenie</b>
+    </p>
+    <p className="contact-row">
       <i className="fa fa-user" />
       Mgr. Silvia Sedláčková<br />
       tréner II. stupňa, I. dan
