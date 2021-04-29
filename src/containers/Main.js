@@ -18,7 +18,7 @@ const Main = () => (
     <Links />
     <Element name="trainings" />
     <div className="container">
-      <h2>Začíname od 1.októbra 2020!</h2>
+      <h2>Začíname trénovať od 1.októbra 2020 v Kultúrnom dome, na ulici Priečna 2 v Podskalke</h2>
       <Table />
     </div>
     <News />
